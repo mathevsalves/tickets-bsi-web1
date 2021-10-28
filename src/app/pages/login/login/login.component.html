@@ -1,9 +1,10 @@
 <div class="master">
   <div (keyup.enter)="login()">
+    <h1>Login</h1>
     <mat-form-field appearance="fill">
       <mat-label>E-mail</mat-label>
       <input matInput placeholder="exemplo@examplo.com" [formControl]="email" required email>
-      <mat-error *ngIf="email.invalid">E-mail inválido</mat-error>
+      <mat-error *ngIf="email.invalid">E-mail inválido.</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
@@ -13,6 +14,7 @@
         [attr.aria-pressed]="hide">
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
+      <mat-error *ngIf="password.invalid">Preencher o campo corretamente.</mat-error>
     </mat-form-field>
 
     <span class="btn-register" (click)="register()">Cadastre-se</span>

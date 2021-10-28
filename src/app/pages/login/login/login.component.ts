@@ -14,26 +14,27 @@ export class LoginComponent implements OnInit {
 
   public hide: boolean = true;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
   public login() {
-    if (this.validatedLogin()) {
+    if (!this.validatedLogin()) {
       if (this.email.value == 'teste@gmail.com' && this.password.value == '123456')
-        alert('logou')
+        this.router.navigate(['show']);
       else
         alert('email ou senha incorretos');
     }
   }
 
   public validatedLogin(): boolean {
-    return this.email.invalid && this.password.invalid;
+    return this.email.invalid || this.password.invalid;
   }
 
   public register() {
     alert('vou para cadastre-se');
+    this.router.navigate(['register']);
   }
 
 

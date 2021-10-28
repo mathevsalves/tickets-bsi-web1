@@ -6,15 +6,22 @@
       width: 100%;
     }
 
+    h1 {
+      color: #928A8A;
+      text-align: center;
+      font-size: 5vh;
+      margin-bottom: 7vh !important;
+    }
+
     .btn-register {
       float: right;
       cursor: pointer;
-      margin: 1vh;
+      margin: 3vh 1vw;
     }
 
     .btn-login {
       width: 50%;
-      margin: 1vh 25%;
+      margin: 1vh 23%;
       background-color: #006dfb;
       color: #fff;
       font-size: 2.5vh;
