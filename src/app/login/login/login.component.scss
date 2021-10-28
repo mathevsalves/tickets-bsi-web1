@@ -1,0 +1,23 @@
+.master {
+  width: 30vw;
+  margin: 25vh auto;
+  div {
+    ::ng-deep .mat-form-field {
+      width: 100%;
+    }
+
+    .btn-register {
+      float: right;
+      cursor: pointer;
+      margin: 1vh;
+    }
+
+    .btn-login {
+      width: 50%;
+      margin: 1vh 25%;
+      background-color: #006dfb;
+      color: #fff;
+      font-size: 2.5vh;
+    }
+  }
+}

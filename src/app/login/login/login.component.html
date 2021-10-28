@@ -1,0 +1,25 @@
+<div class="master">
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>E-mail</mat-label>
+      <input matInput placeholder="exemplo@examplo.com" [formControl]="email" required email>
+      <mat-error *ngIf="email.invalid">E-mail inválido</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Senha</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" [formControl]="password">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <span class="btn-register" (click)="register()">Cadastre-se</span>
+
+    <button class="btn-login" mat-raised-button [disabled]="email.invalid && password.invalid"
+      (click)="validatedLogin()">Login</button>
+
+  </div>
+
+</div>
