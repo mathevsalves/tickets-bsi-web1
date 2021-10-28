@@ -18,6 +18,10 @@
       background-color: #006dfb;
       color: #fff;
       font-size: 2.5vh;
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
     }
   }
 }

@@ -1,5 +1,5 @@
 <div class="master">
-  <div>
+  <div (keyup.enter)="login()">
     <mat-form-field appearance="fill">
       <mat-label>E-mail</mat-label>
       <input matInput placeholder="exemplo@examplo.com" [formControl]="email" required email>
@@ -17,8 +17,8 @@
 
     <span class="btn-register" (click)="register()">Cadastre-se</span>
 
-    <button class="btn-login" mat-raised-button [disabled]="email.invalid && password.invalid"
-      (click)="validatedLogin()">Login</button>
+    <button class="btn-login" mat-raised-button [disabled]="validatedLogin()"
+      (click)="login()">Login</button>
 
   </div>
 

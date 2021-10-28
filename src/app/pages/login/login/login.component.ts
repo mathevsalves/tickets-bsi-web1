@@ -19,15 +19,22 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public validatedLogin() {
-    if (this.email.value == 'teste@gmail.com' && this.password.value == '123456')
-      alert('logou')
-    else
-      alert('email ou senha incorretos');
+  public login() {
+    if (this.validatedLogin()) {
+      if (this.email.value == 'teste@gmail.com' && this.password.value == '123456')
+        alert('logou')
+      else
+        alert('email ou senha incorretos');
+    }
+  }
+
+  public validatedLogin(): boolean {
+    return this.email.invalid && this.password.invalid;
   }
 
   public register() {
     alert('vou para cadastre-se');
   }
+
 
 }
