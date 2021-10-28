@@ -1,3 +1,4 @@
+import { Register } from './../../../interfaces/register';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -22,11 +23,9 @@ export class RegisterComponent implements OnInit {
 
   public register() {
     if (!this.validatedForm()) {
-      console.log(
-        this.name.value,
-        this.email.value,
-        this.password.value,
-      );
+      const register: Register = {name:this.name.value
+         ,email:this.email.value , password:this.password.value};
+      console.log(register);
       this.router.navigate(['login']);
     } else
       alert('dados invalidos');

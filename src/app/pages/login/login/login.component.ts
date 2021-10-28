@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Login } from 'src/app/interfaces/login';
 
 @Component({
   selector: 'app-login',
@@ -21,8 +22,12 @@ export class LoginComponent implements OnInit {
 
   public login() {
     if (!this.validatedLogin()) {
-      if (this.email.value == 'teste@gmail.com' && this.password.value == '123456')
+      if (this.email.value == 'teste@gmail.com' && this.password.value == '123456') {
+        const login: Login = { email: this.email.value, password: this.password.value };
+        console.log(login);
+
         this.router.navigate(['show']);
+      }
       else
         alert('email ou senha incorretos');
     }
