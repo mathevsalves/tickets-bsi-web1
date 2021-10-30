@@ -68,7 +68,18 @@ export class ShowBuyComponent implements OnInit {
 
   public buyShow() {
     if (!this.validatedForm()) {
-      console.log(this.valueForm());
+      this.ticketsService
+        .buyShow(this.valueForm())
+        .subscribe(data => {
+          if (data) {
+            console.log('Compra finalizada');
+            this.router.navigate(['show/finish', this.id]);
+          } else
+            console.log('Algo deu errado, tente novamente');
+        },
+          (error) => {
+            console.log(error);
+          })
     }
   }
 
