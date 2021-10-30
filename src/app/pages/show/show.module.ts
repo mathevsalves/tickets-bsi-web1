@@ -7,6 +7,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { NgxMaskModule } from 'ngx-mask';
 import { ShowBuyComponent } from './show-buy/show-buy.component';
 import { ShowListComponent } from './show-list/show-list.component';
 import { ShowRoutingModule } from './show-routing.module';
@@ -26,7 +27,8 @@ import { ShowRoutingModule } from './show-routing.module';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    NgxMaskModule.forRoot()
   ]
 })
 export class ShowModule { }
