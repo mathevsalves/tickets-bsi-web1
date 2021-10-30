@@ -8,31 +8,31 @@
 
       <mat-form-field appearance="fill" class="w-100">
         <mat-label>Nome impresso no cartão</mat-label>
-        <input matInput placeholder="Nome impresso no cartão" [formControl]="nameFormControl" required>
+        <input matInput placeholder="Nome impresso no cartão" [formControl]="nameFormControl" required minlength="3" maxlength="50">
         <mat-error *ngIf="nameFormControl.invalid">Campo inválido.</mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="fill" class="w-100">
         <mat-label>Número do cartão</mat-label>
-        <input matInput placeholder="Número do cartão" [formControl]="numberFormControl" required>
+        <input matInput placeholder="Número do cartão" [formControl]="numberFormControl" required mask="0000 0000 0000 0000">
         <mat-error *ngIf="numberFormControl.invalid">Campo inválido.</mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="fill" class="w-25">
         <mat-label>Data de validação</mat-label>
-        <input matInput placeholder="Data de validação" [formControl]="validatedFormControl" required>
+        <input matInput placeholder="Data de validação" [formControl]="validatedFormControl" required mask="00/00">
         <mat-error *ngIf="validatedFormControl.invalid">Campo inválido.</mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="fill" class="w-22">
         <mat-label>CVV</mat-label>
-        <input matInput placeholder="CVV" [formControl]="cvvFormControl" required>
+        <input matInput placeholder="CVV" [formControl]="cvvFormControl" required mask="000">
         <mat-error *ngIf="cvvFormControl.invalid">Campo inválido.</mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="fill" class="w-50">
         <mat-label>CPF</mat-label>
-        <input matInput placeholder="CPF" [formControl]="cpfFormControl" required>
+        <input matInput placeholder="CPF" [formControl]="cpfFormControl" required mask="000.000.000-00">
         <mat-error *ngIf="cpfFormControl.invalid">Campo inválido.</mat-error>
       </mat-form-field>
 
