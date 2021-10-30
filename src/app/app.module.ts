@@ -9,6 +9,9 @@ import { AppComponent } from './app.component';
 
 registerLocaleData(localePt);
 
+
+
+
 @NgModule({
   declarations: [
     AppComponent
