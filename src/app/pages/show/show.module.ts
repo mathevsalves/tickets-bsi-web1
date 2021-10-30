@@ -9,13 +9,15 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { NgxMaskModule } from 'ngx-mask';
 import { ShowBuyComponent } from './show-buy/show-buy.component';
+import { ShowFinishComponent } from './show-finish/show-finish.component';
 import { ShowListComponent } from './show-list/show-list.component';
 import { ShowRoutingModule } from './show-routing.module';
 
 @NgModule({
   declarations: [
     ShowListComponent,
-    ShowBuyComponent
+    ShowBuyComponent,
+    ShowFinishComponent
   ],
   imports: [
     CommonModule,
