@@ -23,7 +23,7 @@ export class ShowListComponent implements OnInit {
   }
 
   public buyShow(show: Show) {
-    this.router.navigate([show.id], { relativeTo: this.route });
+    this.router.navigate(['buy', show.id], { relativeTo: this.route });
   }
 
   private findAllShows() {
