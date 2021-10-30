@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Show } from 'src/app/interfaces/show';
+import { ShowBuy } from '../interfaces/show-buy';
 import { Login } from './../interfaces/login';
 import { Register } from './../interfaces/register';
 
@@ -34,7 +35,7 @@ export class TicketsService {
       photo: '/assets/img/projota.jpg',
       name: 'Projota',
       address: 'Rio de Janeiro - RJ',
-      dateShow: this.setDateShow(16, 30, 9),
+      dateShow: this.setDateShow(16, 30, 26),
       price: 175,
       description: 'Cantor Projota'
     }
@@ -59,6 +60,12 @@ export class TicketsService {
   public findByIdShow(id: number): Observable<Show> {
     const show = this.shows.find(find => find.id == id);
     let showObservable: BehaviorSubject<Show> = new BehaviorSubject(show as Show);
+    return showObservable.asObservable();
+  }
+
+  public buyShow(show: ShowBuy): Observable<boolean> {
+    const number = parseInt((Math.random() * 1000).toString());
+    let showObservable: BehaviorSubject<boolean> = new BehaviorSubject(number % 2 == 0);
     return showObservable.asObservable();
   }
 
