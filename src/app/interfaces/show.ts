@@ -1,7 +1,9 @@
 export interface Show {
+  id: number,
   photo: string,
   name: string,
   address: string,
-  datetime: Date,
-  price: number
+  dateShow: Date,
+  price: number,
+  description: string
 }

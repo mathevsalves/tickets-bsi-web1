@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Show } from 'src/app/interfaces/show';
+import { TicketsService } from 'src/app/services/tickets.service';
 
 @Component({
   selector: 'app-show-list',
@@ -7,9 +10,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowListComponent implements OnInit {
 
-  constructor() { }
+  shows: Show[] = [];
+
+  constructor(
+    private ticketsService: TicketsService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+    this.findAllShows();
+  }
+
+  public buyShow(show: Show) {
+    this.router.navigate([show.id], { relativeTo: this.route });
+  }
+
+  private findAllShows() {
+    this.ticketsService
+      .findAllShows()
+      .subscribe(data => {
+        this.shows = data;
+      },
+        (error) => {
+          console.log(error);
+        })
   }
 
 }
