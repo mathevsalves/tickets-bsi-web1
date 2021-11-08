@@ -1,13 +1,14 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { RegisterRoutingModule } from './register-routing.module';
-import { RegisterComponent } from './register/register.component';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { NgxMaskModule } from 'ngx-mask';
+import { RegisterRoutingModule } from './register-routing.module';
+import { RegisterComponent } from './register/register.component';
+
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { MatInputModule } from '@angular/material/input';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    NgxMaskModule.forRoot()
   ]
 })
 export class RegisterModule { }

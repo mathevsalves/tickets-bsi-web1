@@ -23,6 +23,12 @@
       <mat-error *ngIf="password.invalid">Preencher o campo corretamente.</mat-error>
     </mat-form-field>
 
+    <mat-form-field appearance="fill">
+      <mat-label>Telefone</mat-label>
+      <input matInput placeholder="99999-9999" [formControl]="phone" required mask="0000-00009">
+      <mat-error *ngIf="phone.invalid">Preencher o campo corretamente.</mat-error>
+    </mat-form-field>
+
     <button class="btn-register" mat-raised-button [disabled]="validatedForm()"
       (click)="register()">Cadastrar</button>
 
