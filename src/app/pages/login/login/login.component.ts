@@ -1,7 +1,9 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Login } from 'src/app/interfaces/login';
+import { TicketsService } from 'src/app/services/tickets.service';
 
 @Component({
   selector: 'app-login',
@@ -15,21 +17,31 @@ export class LoginComponent implements OnInit {
 
   public hide: boolean = true;
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private ticketsService: TicketsService
+  ) { }
 
   ngOnInit(): void {
   }
 
   public login() {
     if (!this.validatedLogin()) {
-      if (this.email.value == 'teste@gmail.com' && this.password.value == '123456') {
-        const login: Login = { email: this.email.value, password: this.password.value };
-        console.log(login);
+      this.ticketsService
+        .postLogin(this.dataLogin())
+        .subscribe(data => {
+          if (data) {
+            alert('Bem vindo(a) a aplicação');
+            this.router.navigate(['show']);
+          }
+          else
+            alert('email ou senha incorretos');
+        },
+          (error: HttpErrorResponse) => {
+            console.log(error.error);
+            alert('Erro ao tentar logar!');
+          })
 
-        this.router.navigate(['show']);
-      }
-      else
-        alert('email ou senha incorretos');
     }
   }
 
@@ -42,5 +54,8 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['register']);
   }
 
+  private dataLogin(): Login {
+    return { email: this.email.value, password: this.password.value }
+  }
 
 }
