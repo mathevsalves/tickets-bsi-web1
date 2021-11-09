@@ -37,4 +37,8 @@ export class ShowFinishComponent implements OnInit {
         })
   }
 
+  public backToMenu() {
+    this.router.navigate(['show']);
+  }
+
 }

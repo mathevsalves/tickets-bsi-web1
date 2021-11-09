@@ -1,6 +1,6 @@
 .master {
   width: 30vw;
-  margin: 25vh auto;
+  margin: 20vh auto;
   div {
     ::ng-deep .mat-form-field {
       width: 100%;
@@ -22,7 +22,7 @@
     .btn-login {
       width: 50%;
       margin: 1vh 23%;
-      background-color: #006dfb;
+      background-color: #f68c1f;
       color: #fff;
       font-size: 2.5vh;
       &:disabled {
