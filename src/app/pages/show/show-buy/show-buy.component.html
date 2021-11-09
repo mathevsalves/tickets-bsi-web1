@@ -1,7 +1,7 @@
 <div>
   <div class="main">
     <div class="photo">
-      <img [src]="show.photo" [alt]="show.description">
+      <img [src]="show?.photo" [alt]="show?.description">
     </div>
 
     <div class="form" (keyup.enter)="buyShow()">

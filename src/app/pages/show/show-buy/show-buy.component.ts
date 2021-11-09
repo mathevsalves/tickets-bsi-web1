@@ -33,27 +33,8 @@ export class ShowBuyComponent implements OnInit {
       this.id = parseInt(data.id, 10);
       this.findByIdShow(this.id);
     })
-    const test = this.test();
-    this.nameFormControl.setValue(test.name);
-    this.numberFormControl.setValue(test.number);
-    this.validatedFormControl.setValue(test.validated);
-    this.cvvFormControl.setValue(test.cvv);
-    this.cpfFormControl.setValue(test.cpf);
-    this.emailFormControl.setValue(test.email);
   }
 
-  private test() {
-    const showBuy: ShowBuy = {
-      idShow: this.id,
-      name: 'Daniel',
-      number: '1234567890123456',
-      validated: '1029',
-      cvv: '123',
-      cpf: '98765432109',
-      email: 'd@d.com'
-    }
-    return showBuy;
-  }
 
   private findByIdShow(id: number) {
     this.ticketsService
@@ -94,13 +75,15 @@ export class ShowBuyComponent implements OnInit {
 
   private valueForm() {
     const showBuy: ShowBuy = {
+      id: null,
       idShow: this.id,
       name: this.nameFormControl.value,
       number: this.numberFormControl.value,
       validated: this.validatedFormControl.value,
       cvv: this.cvvFormControl.value,
       cpf: this.cpfFormControl.value,
-      email: this.emailFormControl.value
+      email: this.emailFormControl.value,
+      moment: new Date()
     }
     return showBuy;
   }

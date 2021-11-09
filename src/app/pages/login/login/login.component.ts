@@ -31,11 +31,11 @@ export class LoginComponent implements OnInit {
         .postLogin(this.dataLogin())
         .subscribe(data => {
           if (data) {
-            alert('Bem vindo(a) a aplicação');
+            alert('Bem vindo(a) a aplicação!');
             this.router.navigate(['show']);
           }
           else
-            alert('email ou senha incorretos');
+            alert('email ou senha incorretos!');
         },
           (error: HttpErrorResponse) => {
             console.log(error.error);
